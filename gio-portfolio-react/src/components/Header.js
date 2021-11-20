@@ -12,10 +12,10 @@ const setStyles = makeStyles(theme => ({
         margin: theme.spacing(1.4)
     },
     text: {
-        color: '#173F5F'
+        color: '#17252A'
     },
     subText: {
-        color: '#5D5C61',
+        color: '#DEF2F1',
         marginBottom: "2.5"
     },
     typedCont: {
@@ -25,7 +25,7 @@ const setStyles = makeStyles(theme => ({
         transform: "translate(-50%,-60%)",
         width: "90vw",
         textAlign: "Center",
-        zIndex: 1
+        zIndex: 1.5
     }
 }))
 
