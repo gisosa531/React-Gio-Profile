@@ -1,6 +1,15 @@
 import React from "react";
-import PortfolioContainer from "./components/PortfolioContainer";
+import Home from "./components/Home"
+import "./App.css";
+import { CssBaseline } from "@material-ui/core";
 
-const App = () => <PortfolioContainer />;
+const App = () => {
+    return (
+        <>
+            <CssBaseline />
+            <Home />
+        </>
+    )
+}
 
 export default App;

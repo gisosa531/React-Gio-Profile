@@ -1,53 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import rightNavSlider from "@material-ui/core/Drawer"
+import {
+    AppBar,
+    Toolbar,
+    ListItem,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    Avatar,
+    Divider,
+    List,
+    Typography,
+    Box
+} from "@material-ui/core";
+import {
+    ArrowBack,
+    Home,
+    ContactMail,
+    BusinessCenter,
+    FileCopy
+} from "@material-ui/icons"
+import avatar from "../assets/avatar/avatar.png"
 
-// Here we are using object destructuring assignment to pluck off our variables from the props object
-// We assign them to their own variable names
-function NavTabs({ currentPage, handlePageChange }) {
-  return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <a
-          href="#home"
-          onClick={() => handlePageChange('Home')}
-          // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-          className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
-        >
-          Home
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#about"
-          onClick={() => handlePageChange('About')}
-          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-        >
-          About
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#blog"
-          onClick={() => handlePageChange('Blog')}
-          // Check to see if the currentPage is `Blog`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Blog' ? 'nav-link active' : 'nav-link'}
-        >
-          Blog
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#contact"
-          onClick={() => handlePageChange('Contact')}
-          // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
-  );
-}
+// Creating CSS Styles 
+const setStyle = makeStyles(theme => ({
+    sideBar: {
+        width: 220,
+        background: "rgb(45, 133, 139)",
+        height: "35rem"
+    },
+    avatarPic: {
+        display: "block",
+        margin: "0.4rem auto",
+        width: theme.spacing(12),
+        height: theme.spacing(12)
+    },
+    lsIcon: {
+        color: "#cbdadb"
+    }
+}));
 
-export default NavTabs;
+const sideItems = [
+    {
+        lsIcon: <Home />,
+        lsText: "Home"
+    },
+    {
+        lsIcon: <FileCopy />,
+        lsText: "Resume"
+    },
+    {
+        lsIcon: <BusinessCenter />,
+        lsText: "Portfolio"
+    },
+    {
+        lsIcon: <ContactMail />,
+        lsText: "Contacts"
+    },
+]
+
+function NavTabs() {
+    const [state, setState] = useState({
+        right: false
+    });
+
+    const toggleNavBar = (slider, on) => () => {
+        setState({ ...state, [slider]: on })
+    };
+
+    const classes = setStyle()
+
+    const sidebar = slider => (
+        <Box className={classes.sideBar} component="div">
+            <Avatar className={classes.avatarPic} src={avatar} alt="Giovanni Sosa" />
+            <Divider />
+            <List>
+                {sideItems.map((lstItems, Key) => (
+                    <ListItem button key={Key}>
+                        <ListItemIcon className={classes.lsIcon}>
+                            {lstItems.lsIcon}
+                        </ListItemIcon>
+                        <ListItemText className={classes.lsIcon} primary={lstItems.lsText} />
+                    </ListItem>
+                ))}
+
+            </List>
+        </Box>
+    )
+    return (
+
+        <Box component="nav">
+            <AppBar position="static" style={{ background: "#283655" }}>
+                <Toolbar>
+                    <IconButton onClick={toggleNavBar("right", true)}>
+                        <ArrowBack style={{ color: "#4b86b4" }} />
+                    </IconButton>
+                    <Typography variant="h4" style={{ color: "#d0e1f9" }}>
+                        Portfolio
+                    </Typography>
+                    
+
+                </Toolbar>
+                
+
+            </AppBar>
+            <rightNavSlider
+                        on={state.right} >
+                        {sidebar("right")}
+                    </rightNavSlider>
+        </Box>
+
+    );
+};
+
+export default NavTabs
