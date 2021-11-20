@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import rightNavSlider from "@material-ui/core/Drawer"
+import { Drawer } from '@material-ui/core';
 import {
+    AccountCircleIcon,
     AppBar,
     Toolbar,
     ListItem,
@@ -19,7 +20,10 @@ import {
     Home,
     ContactMail,
     BusinessCenter,
-    FileCopy
+    FileCopy,
+    Apps,
+    DoubleArrow,
+    AssignmentReturn
 } from "@material-ui/icons"
 import avatar from "../assets/avatar/avatar.png"
 
@@ -65,14 +69,17 @@ function NavTabs() {
         right: false
     });
 
-    const toggleNavBar = (slider, on) => () => {
-        setState({ ...state, [slider]: on })
+    const toggleNavBar = (slider, open) => () => {
+        setState({ ...state, [slider]: open })
     };
 
     const classes = setStyle()
 
-    const sidebar = slider => (
-        <Box className={classes.sideBar} component="div">
+    const sidebar = (slider) => (
+        <Box className={classes.sideBar}
+            component="div"
+            onClick={toggleNavBar(slider, false)}
+        >
             <Avatar className={classes.avatarPic} src={avatar} alt="Giovanni Sosa" />
             <Divider />
             <List>
@@ -87,30 +94,33 @@ function NavTabs() {
 
             </List>
         </Box>
-    )
+    );
     return (
+        <>
+            <Box component="nav">
+                <AppBar position="static" style={{ background: "#283655" }}>
+                    <Toolbar>
+                        <IconButton onClick={toggleNavBar("right", true)}>
+                            <AssignmentReturn style={{ color: "#4b86b4" }} />
+                        </IconButton>
+                        <Typography variant="h4" style={{ color: "#d0e1f9" }}>
+                            Portfolio
+                        </Typography>
+                        <Drawer
+                            anchor="right"
+                            open={state.right}
+                            onClose={toggleNavBar("right", false)}>
+                            {sidebar("right")}
+                        </Drawer>
 
-        <Box component="nav">
-            <AppBar position="static" style={{ background: "#283655" }}>
-                <Toolbar>
-                    <IconButton onClick={toggleNavBar("right", true)}>
-                        <ArrowBack style={{ color: "#4b86b4" }} />
-                    </IconButton>
-                    <Typography variant="h4" style={{ color: "#d0e1f9" }}>
-                        Portfolio
-                    </Typography>
-                    
+                    </Toolbar>
 
-                </Toolbar>
-                
 
-            </AppBar>
-            <rightNavSlider
-                        on={state.right} >
-                        {sidebar("right")}
-                    </rightNavSlider>
-        </Box>
+                </AppBar>
+            </Box>
 
+
+        </>
     );
 };
 
