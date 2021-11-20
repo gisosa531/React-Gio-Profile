@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Drawer } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 import {
     AccountCircleIcon,
     AppBar,
@@ -48,11 +49,13 @@ const setStyle = makeStyles(theme => ({
 const sideItems = [
     {
         lsIcon: <Home />,
-        lsText: "Home"
+        lsText: "Home",
+        lsPath: "/"
     },
     {
         lsIcon: <FileCopy />,
-        lsText: "Resume"
+        lsText: "Resume",
+        lsPath: "/resume"
     },
     {
         lsIcon: <BusinessCenter />,
@@ -84,7 +87,7 @@ function NavTabs() {
             <Divider />
             <List>
                 {sideItems.map((lstItems, Key) => (
-                    <ListItem button key={Key}>
+                    <ListItem button key={Key} component = {Link} to ={lstItems.lsPath}>
                         <ListItemIcon className={classes.lsIcon}>
                             {lstItems.lsIcon}
                         </ListItemIcon>

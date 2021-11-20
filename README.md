@@ -22,10 +22,10 @@ Run the following command for proper installation of dependencies:
 
 
 ## Usage Information
-The first step is to open the indicated file (server.js) in an integrated terminal. 
+The first step is to open the indicated file (App.js) in an integrated terminal. 
 Using Node.js, we use the following command:
 ```
-npm run develop
+npm start
 ```
 
 ## License
@@ -33,14 +33,16 @@ This Project is licensed under [MIT](https://opensource.org/licenses/MIT)
 
 ## Contribution Guidelines
 Thanks to:
-* []()
-* []()
-* []()
+* [https://www.npmjs.com/package/react-tsparticles](https://www.npmjs.com/package/react-tsparticles)
+* [https://mui.com/](https://mui.com/)
+* [https://v5.reactrouter.com/web/guides/quick-start](https://v5.reactrouter.com/web/guides/quick-start)
 
 ## GitHub Repo:
 * [https://github.com/gisosa531/React-Gio-Profile](https://github.com/gisosa531/React-Gio-Profile)
 
 ## Images/Videos
+<img src="./assets/images/HomePage.png" alt="Screenshot of Webpage">
+<img src="./assets/images/Dashboard.png" alt="Screenshot of Webpage">
 
 ## Contact Information
 If you have any problems concerning the repo, please file an issue or email me at 

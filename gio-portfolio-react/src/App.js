@@ -1,13 +1,18 @@
 import React from "react";
-import Home from "./components/Home"
-import "./App.css";
+import {Route} from 'react-router-dom';
 import { CssBaseline } from "@material-ui/core";
+import Home from "./components/Home";
+import Resume from "./components/Resume";
+import "./App.css";
+
+
 
 const App = () => {
     return (
         <>
             <CssBaseline />
-            <Home />
+            <Route exact path="/" component = {Home} />
+            <Route path="/resume" component = {Resume}/>
         </>
     )
 }
