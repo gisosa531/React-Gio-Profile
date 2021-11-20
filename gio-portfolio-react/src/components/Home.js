@@ -32,7 +32,7 @@ export default function Home() {
             },
             fpsLimit: 60,
             collisions: {
-              enable: true,
+              enable: false,
             },
             interactivity: {
               Event: {

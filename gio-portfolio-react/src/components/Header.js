@@ -44,6 +44,8 @@ export default function Header() {
             <Typography className={classes.subText} variant="h4">
                 <Typed strings={["Full-Stack Developer", "Javascript", "MERN Stack"]} typeSpeed={38} backSpeed={55} loop/>
             </Typography>
+
+            
         </Box>
     )
 }

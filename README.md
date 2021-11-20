@@ -41,7 +41,9 @@ Thanks to:
 * [https://github.com/gisosa531/React-Gio-Profile](https://github.com/gisosa531/React-Gio-Profile)
 
 ## Images/Videos
-<img src="./assets/images/HomePage.png" alt="Screenshot of Webpage">
+<img src="./HomePage.png" alt="Screenshot of Webpage">
+
+
 <img src="./assets/images/Dashboard.png" alt="Screenshot of Webpage">
 
 ## Contact Information
