@@ -1,5 +1,6 @@
 # React-Gio-Profile
 ![license](https://img.shields.io/badge/License-MIT-yellow.svg)
+(STILL UNDER CONSTRUCTION)
 
 ## Description
 
