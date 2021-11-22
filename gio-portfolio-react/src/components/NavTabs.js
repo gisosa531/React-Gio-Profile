@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Drawer } from '@material-ui/core';
 import {Link} from 'react-router-dom'
 import {
-    AccountCircleIcon,
+    
     AppBar,
     Toolbar,
     ListItem,
@@ -17,13 +17,11 @@ import {
     Box
 } from "@material-ui/core";
 import {
-    ArrowBack,
+    
     Home,
     ContactMail,
     BusinessCenter,
     FileCopy,
-    Apps,
-    DoubleArrow,
     AssignmentReturn
 } from "@material-ui/icons"
 import avatar from "../assets/avatar/avatar.png"
@@ -106,7 +104,7 @@ function NavTabs() {
                         <IconButton onClick={toggleNavBar("right", true)}>
                             <AssignmentReturn style={{ color: "#4b86b4" }} />
                         </IconButton>
-                        <Typography variant="h4" style={{ color: "#d0e1f9" }}>
+                        <Typography variant="h4" style={{ color: "#e5e5dc" }}>
                             Portfolio
                         </Typography>
                         <Drawer
@@ -127,4 +125,4 @@ function NavTabs() {
     );
 };
 
-export default NavTabs
+export default NavTabs;
