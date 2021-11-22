@@ -46,11 +46,11 @@ const setStyles = makeStyles(theme => ({
     "&:before": {
       content: "''",
       position: "absolute",
-      right: "-0.963rem",
+      right: "-0.639rem",
       top: "calc(55%-5.3px)",
-      borderStyle: "solid",
+      borderStyle: "ridge",
       borderColor: "#c4a35a #c4a35a transparent transparent",
-      borderWidth: "0.639",
+      borderWidth: "0.639rem",
       transform: "rotate(45deg)"
     },
     [theme.breakpoints.up("md")]: {
@@ -71,8 +71,8 @@ const setStyles = makeStyles(theme => ({
   chronoYear: {
     textAlign: "center",
     maxWidth: " 9.369rem",
-    margin: " 0 2.5rem 0 auto",
-    fontSize: "1.9 rem",
+    margin: " 0 rem 0 auto",
+    fontSize: "1.9rem",
     background: "#c4a35a",
     color: "#000000",
     lineHeight: 1,
