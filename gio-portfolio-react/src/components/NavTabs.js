@@ -57,11 +57,13 @@ const sideItems = [
     },
     {
         lsIcon: <BusinessCenter />,
-        lsText: "Portfolio"
+        lsText: "Portfolio",
+        lsPath: "/portfolio"
     },
     {
         lsIcon: <ContactMail />,
-        lsText: "Contacts"
+        lsText: "Contacts",
+        lsPath: "/contacts"
     },
 ]
 
