@@ -18,13 +18,13 @@ const Portfolio = () => {
     return (
         <Box component="div">
             <NavTabs />
-            <Grid container justify="center" alignItems="center">
+            <Grid container justifyContent='center'>
                {/* Project 1 */}
                 <Grid item xs={12} sm={8} md={6}>
                     <Card>
                         <CardActionArea>
                             <CardMedia
-                            components="img"
+                            component="img"
                             alt="Project 1"
                             height="140"
                             image={project1}
