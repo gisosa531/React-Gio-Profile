@@ -12,16 +12,29 @@ import {
     Typography
 } from '@material-ui/core';
 import NavTabs from './NavTabs';
-import project1 from "../assets/projects/BlossomBabies.png"
+import project1 from "../assets/projects/BlossomBabies.png";
 
+const style = makeStyles({
+    mainCont: {
+        background: "#222",
+        height: "100%"
+    },
+
+    cardCont: {
+        maxWidth: 355,
+        margin: "2.5 rem",
+        margin: "4rem auto"
+    }
+})
 const Portfolio = () => {
+    const classes = style()
     return (
-        <Box component="div">
+        <Box component="div" className={classes.mainCont}>
             <NavTabs />
             <Grid container justifyContent='center'>
                {/* Project 1 */}
                 <Grid item xs={12} sm={8} md={6}>
-                    <Card>
+                    <Card className= {classes.cardCont}>
                         <CardActionArea>
                             <CardMedia
                             component="img"
